@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Nav from "../components/Nav";
 import List from "../components/List";
 import Insert from "../components/Insert";
+import Layout from "./Layout";
 
 function TodoList() {
     const lastId = useRef(4);
@@ -39,9 +39,12 @@ function TodoList() {
 
     return (
         <div>
-            <Nav headerName="오늘 할 일" />
-            <Insert todos={todos} onInsert={onInsert} />
-            <List todos={todos} onChecked={onChecked} onDelete={onDelete} />
+            <>
+                <Layout>
+                    <Insert todos={todos} onInsert={onInsert} />
+                    <List todos={todos} onChecked={onChecked} onDelete={onDelete} />
+                </Layout>
+            </>
         </div>
     );
 }

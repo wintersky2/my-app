@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Layout from "./Layout";
 
 function Todo() {
-    const id = useParams();
+    const params = useParams();
 
     const [todo, setTodo] = useState({});
 
     useEffect(() => {
-        fetch('https://dummyjson.com/todos/' + id.id)
+        fetch('https://dummyjson.com/todos/' + params.id)
             .then(res => res.json())
             .then(data => setTodo(data));
     }, [])
 
     return (
         <>
-            <div>Id : {todo.id}</div>
-            <div>content : {todo.todo}</div>
+            <Layout>
+                <ul>
+                    <li>id : {todo.id}</li>
+                    <li>content : {todo.todo}</li>
+                    <li>checked : {todo.completed ? "true" : "false"}</li>
+                    <li>userId : {todo.userId}</li>
+                </ul>
+            </Layout>
+
         </>
     );
 }

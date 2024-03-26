@@ -1,5 +1,13 @@
+import Layout from "./Layout";
+
 function Home() {
-    return (<>홈입니다.</>);
+    return (
+        <>
+            <Layout>
+                홈입니다.
+            </Layout>
+        </>
+    );
 }
 
 export default Home;

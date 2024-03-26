@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./page/home";
+import Home from "./page/Home";
 import TodoList from "./page/TodoList";
 import Todo from "./page/Todo";
 
