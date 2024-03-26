@@ -2,7 +2,10 @@
 
 function Nav({ headerName }) {
     return (
-        <h1>{headerName}</h1>
+        <nav>
+            <a href="/home">홈</a>
+            <a href="/todo">할일</a>
+        </nav>
     );
 }
 
